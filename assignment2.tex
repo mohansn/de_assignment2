@@ -1,0 +1,130 @@
+\documentclass[a4paper,11pt]{article}
+\pagestyle{plain}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\begin{document}
+
+\title{Assignment 2 - Differential Equations}
+\date{July 22, 2012}
+\author{Mohan S Nayaka}
+
+\maketitle
+1. Solve the differential equation
+\[ x + y \frac{dy}{dx} = 0 \]
+\emph{Answer}:
+Separating the variables
+\[ y \frac{dy}{dx} = -x \]
+\[ ydy = -xdx \]
+Integrating both sides, we obtain:
+\[ \int y\,dy = \int -x\,dx \]
+\[ \frac{y^2}{2} = -\frac{x^2}{2} + C_1 \]
+\[ y^2 = -x^2 + 2 * C_1 \]
+Thus, the solution is
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|}
+\hline
+$x^2 + y^2 = C$ \\
+\hline
+\end{tabular}}
+\begin{center}
+where $C = 2 * C_1$.
+\end{center}
+
+\maketitle
+2. Generate a family of curves for the above equation and find a particular solution for $y(0) = 10$.
+\\
+\emph{Answer}:
+The family of curves is a set of circles with centre at the origin.\\
+\newpage
+%This is a very simple method of including an image (via TeX commands in circles.tex)
+% \input was used instead of \include since the latter inroduces a page break
+% which is not desirable.
+%\input{circles}
+% Using EPS is the better alternative. However, using it places the plot on a later page
+% which is not acceptable
+\begin{figure}[ht]
+\centering
+\includegraphics{circ}
+\end{figure}
+\textbf{Particular Solution}:
+Substituting the given values y=10 when x=0, in $x^2+y^2=C$,
+\[ 100 + 0 = C\]
+\[C = 100\]
+Hence, the particular solution is:
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|}
+\hline
+$x^2 + y^2 = 100$\\
+\hline
+\end{tabular}}\\
+
+\maketitle
+3. The number of bacteria \emph{N} is 10,000 at time \emph{t}=0. At \emph{t}=3 hours, \emph{N}=500,000. Find the value of
+\begin{enumerate}
+\item[(i)]\emph{N} at \emph{t}=24 hours
+\\
+\item[(ii)]\emph{t} when \emph{N} is 20,000
+\end{enumerate}
+\emph{Answer}:
+From theory, we know that the rate of change of the number of bacteria at a given time is proportional to the number of bacteria present at the time.
+Thus,
+\[ \frac{dN}{dt} = kN\]
+Separating variables, we obtain:
+\[ \frac{dN}{N} = kdt \]
+Integrating, we obtain:
+\[ lnN = kt + C_1\]
+Simplifying,
+\[N=k_1 e^{kt}\]
+At time t=0, we have N=10000. Hence,
+\[k_1 = 10000\]
+Thus,
+\[N=10000e^{kt}\]
+At time t=3, we have N=500000,
+Thus,
+\[500000 = 10000 e^{k*3}\]
+Thus,
+\[k=\frac{1}{3}* ln50\]
+\[k=1.304\]
+\[N=100000e^{1.304t}\]
+
+For (i),
+\[N=10000*e^{1.304*24}\]
+\begin{center}
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|}
+\hline
+N=390553114652259072.000000\\
+\hline
+\end{tabular}}
+\end{center}
+
+For (ii), N=20000
+\[20000 = 10000 * e^{1.304*t}\]
+\[1.304*t = ln2\]
+\begin{center}
+\begin{tabular}{|c|}
+\hline
+t=0.903864 hours\\
+\hline
+\end{tabular}
+\end{center}
+
+\maketitle
+3. $C_{14}$ isotope has a half-life of 5600 hours. What is the fraction that remains after 10,000 years?
+\\
+\emph{Answer}:
+The mass of $C_{14}$ remaining after time \emph{t} can be modelled by the equation:
+\[M=M_0e^{-kt}\]
+where $M_0$ is the mass at time \emph{t}=0 and \emph{k} is a constant.
+We are given data that the mass at \emph{t}=5600 years is half of the mass present initially.
+Hence,
+\[\frac{M_0}{2} = M_0e^{-5600k}\]
+\[k=\frac{ln2}{5600}\]
+\[k=0.000124\]
+Thus,
+\[M=M_0e^{-0.000124t}\]
+At t=10000 years,
+\[M=M_0e^{-1.24}\]
+\[M=M_0*0.289384\]
+Thus, the fraction remaining after 10000 years is \underline{0.289384}.
+\end{document}
